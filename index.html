@@ -1,12 +1,91 @@
-<html>
-    <head>
-        </head>
-        <body>
-            <h1>Hola Mundo esaninos</h1>
-            <button>Enviar</button>
-        </body>
-        <footer>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Ferrari</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
 
-        </footer>
+      /* Fondo con imagen de Ferrari */
+      background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') no-repeat center center/cover;
 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 12px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #e10600; /* rojo Ferrari */
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #b80000;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-box">
+  <h2>Iniciar Sesión</h2>
+  <input type="text" id="usuario" placeholder="Usuario">
+  <input type="password" id="password" placeholder="Contraseña">
+  <button onclick="login()">Entrar</button>
+  <p id="mensaje" class="error"></p>
+</div>
+
+<script>
+  function login() {
+    const user = document.getElementById("usuario").value;
+    const pass = document.getElementById("password").value;
+
+    const usuarioCorrecto = "admin";
+    const passwordCorrecto = "1234";
+
+    if (user === usuarioCorrecto && pass === passwordCorrecto) {
+      alert("Login correcto");
+    } else {
+      document.getElementById("mensaje").textContent = "Usuario o contraseña incorrectos";
+    }
+  }
+</script>
+
+</body>
 </html>
